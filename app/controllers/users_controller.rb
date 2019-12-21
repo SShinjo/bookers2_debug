@@ -1,8 +1,4 @@
 class UsersController < ApplicationController
-	before_action :authenticate_user!
-	#ビフォーアクションはこのコントローラーが実行される前という意味
-	#authenticate userはdeviseで用意されているメソッドで、ログイン認証がされていないとrootパスにリダイレクトされる。
-	#アプリケーションコントローラーに記述すれば全適用されるが、今回はhomeコントローラーは適用したくないので、booksとusersに適用
 	before_action :baria_user, only: [:edit, :update]
 
   def show

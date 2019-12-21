@@ -1,13 +1,13 @@
-<!-- newbook入力でエラー発生時はbook indexにリダイレクトして、最初にエラー判定させてる-->
 <% if @book.errors.any? %>
-	<h3><%= @book.errors.count %>error occurrence</h3><!--エラーメッセ-->
-	<ul>
-		<% @book.errors.full_messages.each do |message| %>
-		<li><%= message %></li>
-		<% end %>
-	</ul>
+<div class="error-message">
+ <h2><%= @book.errors.count %>error prohibited this obj from being saved:</h2>
+ <ul>
+ <% @book.errors.full_messages.each do |msg| %>
+ <li><%= msg %></li>
+ <% end %>
+</ul>
+</div>
 <% end %>
-<!-- エラーメッセージ表示-->
 
 <div class="row">
 	<div class="col-xs-3">

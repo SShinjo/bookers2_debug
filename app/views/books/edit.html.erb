@@ -4,12 +4,14 @@
 <h1>Editing Book</h1>
 
 <% if @book.errors.any? %>
-	<h3><%= @book.errors.count %>error occurrence</h3><!--エラーメッセ-->
-	<ul>
-		<% @book.errors.full_messages.each do |message| %>
-		<li><%= message %></li>
-		<% end %>
-	</ul>
+<div class="error-message">
+ <h2><%= @book.errors.count %>error prohibited this obj from being saved:</h2>
+ <ul>
+ <% @book.errors.full_messages.each do |msg| %>
+ <li><%= msg %></li>
+ <% end %>
+</ul>
+</div>
 <% end %>
 
 <%= render "books/newform", book: @book %>
